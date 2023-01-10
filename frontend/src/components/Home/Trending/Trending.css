@@ -1,0 +1,57 @@
+.TrendingDiv {
+  background-color: rgb(115,114,115);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 21px;
+  padding: 25px;
+  margin-top: 2px;
+  color: whitesmoke;
+}
+.TrendingDiv > div {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.TrendingDiv > div > img {
+  border-radius: 4%;
+  height: 160px;
+  width: 1000px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* border: 1px solid red; */
+}
+
+.Watchfree {
+  font-size: 18px;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 2%;
+  margin-top: 9px;
+ 
+  color: whitesmoke;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .TrendingDiv {
+    background-color: rgb(115,114,115);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 21px;
+    padding: 25px;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .TrendingDiv {
+    background-color: rgb(115,114,115);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 21px;
+    padding: 25px;
+    color: white;
+  }
+}
