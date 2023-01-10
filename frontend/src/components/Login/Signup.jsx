@@ -14,7 +14,7 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name.length > 2 && password.length > 7 && email.length > 9) {
+    if (name.length > 2 && password.length > 3 && email.length > 5) {
       setLoading(true);
       let data = { name, email, password };
       axios
@@ -70,8 +70,8 @@ export default function Signup() {
       {loading ? (
         <div>
           <Spinner
-            thickness='9px'
-            speed='1s'
+            thickness="9px"
+            speed="1s"
             emptyColor="gray.200"
             color="blue.500"
             size="xl"

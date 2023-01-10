@@ -16,25 +16,117 @@ import MusicSingle from "../SinglePage/MusicSingle";
 import Search from "../Home/SearchData/SearchData";
 import SearchSingle from "../SinglePage/SearchSingle";
 import Signup from "../Login/Signup";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const MainRoute = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup/>} />
-      <Route path="/search" element={<Search />} />
-      <Route path="/Movies/:_id" element={<SinglePage />} />
-      <Route path="/Popular/:_id" element={<PopularSinglePage />} />
-      <Route path="/Comedy/:_id" element={<ComedySingle />} />
-      <Route path="/Current/:_id" element={<CurrentSingle />} />
-      <Route path="/Future/:_id" element={<FutureSingle />} />
-      <Route path="/Historical/:_id" element={<HistoricalSingle />} />
-      <Route path="/Original/:_id" element={<OriginSingle />} />
-      <Route path="/Clitter/:_id" element={<ClutterSingle />} />
-      <Route path="/Drama/:_id" element={<DramaSingle />} />
-      <Route path="/Kids/:_id" element={<KidsSingle />} />
-      <Route path="/Music/:_id" element={<MusicSingle />} />
-      <Route path="/Search/:_id" element={<SearchSingle />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route
+        path="/search"
+        element={
+          <PrivateRoute>
+            <Search />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Movies/:_id"
+        element={
+          <PrivateRoute>
+            <SinglePage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Popular/:_id"
+        element={
+          <PrivateRoute>
+            <PopularSinglePage />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Comedy/:_id"
+        element={
+          <PrivateRoute>
+            <ComedySingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Current/:_id"
+        element={
+          <PrivateRoute>
+            <CurrentSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Future/:_id"
+        element={
+          <PrivateRoute>
+            <FutureSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Historical/:_id"
+        element={
+          <PrivateRoute>
+            <HistoricalSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Original/:_id"
+        element={
+          <PrivateRoute>
+            <OriginSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Clitter/:_id"
+        element={
+          <PrivateRoute>
+            <ClutterSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Drama/:_id"
+        element={
+          <PrivateRoute>
+            <DramaSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Kids/:_id"
+        element={
+          <PrivateRoute>
+            <KidsSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Music/:_id"
+        element={
+          <PrivateRoute>
+            <MusicSingle />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/Search/:_id"
+        element={
+          <PrivateRoute>
+            <SearchSingle />
+          </PrivateRoute>
+        }
+      />
 
       <Route path="*" element={<div>Page Not Found</div>} />
     </Routes>

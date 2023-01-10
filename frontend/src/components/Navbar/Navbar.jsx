@@ -1,9 +1,30 @@
 import React from "react";
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoutUser } from "../../Redux/AuthReducer/action";
+import { useToast } from "@chakra-ui/react";
 // import SearchIcon from '@mui/icons-material/Search';
 
 function Header() {
+  const toast = useToast();
+  let isAuth = useSelector((state) => state.AuthReducer.isAuth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    dispatch(LogoutUser());
+    // console.log("hii");
+    toast({
+      position: "top",
+      title: "Logout Successfully",
+      description: "Have a nice day !",
+      status: "success",
+      duration: 6000,
+      isClosable: true,
+    });
+    navigate("/");
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -24,11 +45,19 @@ function Header() {
         </Link>
       </div>
 
-      <div className="signin_but">
-        <Link to="/login">
-          <button className="but">Sign in</button>
-        </Link>
-      </div>
+      {!isAuth ? (
+        <div className="signin_but">
+          <Link to="/login">
+            <button className="but">Sign in</button>
+          </Link>
+        </div>
+      ) : (
+        <div className="signin_">
+          <button className="but" onClick={handleClick}>
+            Logout
+          </button>
+        </div>
+      )}
     </div>
   );
 }
